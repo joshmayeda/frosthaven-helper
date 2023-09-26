@@ -8,16 +8,17 @@ import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox
 type ItemCounterProps = {
     startingValue: number;
     maxValue: number;
+    value: number;
+    setItemValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const ItemCounter:React.FC<ItemCounterProps> = ({ startingValue, maxValue }) => {
+const ItemCounter:React.FC<ItemCounterProps> = ({ startingValue, maxValue, value, setItemValue }) => {
 
-    const [value, setValue] = useState(startingValue);
     const [decrementDisabled, setDecrementDisabled] = useState(true);
     const [incrementDisabled, setIncrementDisabled] = useState(false);
 
     const handleIncrement = () => {
-        setValue(value + 1);
+        setItemValue(value + 1);
         if((value + 1) === maxValue) {
             setIncrementDisabled(true);
         }
@@ -25,7 +26,7 @@ const ItemCounter:React.FC<ItemCounterProps> = ({ startingValue, maxValue }) => 
     }
 
     const handleDecrement = () => {
-        setValue(value - 1);
+        setItemValue(value - 1);
         if(value === 1) {
             setDecrementDisabled(true);
         }
@@ -34,11 +35,11 @@ const ItemCounter:React.FC<ItemCounterProps> = ({ startingValue, maxValue }) => 
 
     return (
         <>
-            <div className="flex h-full self-center justify-self-center">
+            <div className="flex h-full self-center justify-self-center border-b-2">
                 <Button onClick={handleDecrement} disabled={decrementDisabled}>
                     <IndeterminateCheckBoxIcon />
                 </Button>
-                <div className="h-full">{value}</div>
+                <div className="flex items-center h-full">{value}</div>
                 <Button onClick={handleIncrement} disabled={incrementDisabled}>
                     <AddBoxIcon />
                 </Button>
