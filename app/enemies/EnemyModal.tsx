@@ -42,9 +42,7 @@ const EnemyModal:React.FC<EnemyModalProps> = ({ showEnemyModal, setShowEnemyModa
       <Button variant="contained" onClick={() => setShowEnemyModal(true)} className="fixed right-10 bottom-10 bg-green-500 text-black">ADD ENEMY</Button>
       {showEnemyModal ? (
         <>
-          <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-          >
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-1/2 h-1/2 my-6 mx-auto">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-full bg-white outline-none focus:outline-none">

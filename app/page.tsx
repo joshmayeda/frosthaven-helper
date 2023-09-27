@@ -1,6 +1,6 @@
 'use client';
 
-import LootDeckSelect from './lootdeck/LootDeckSelect'
+import LootDeckSelect from './lootdeck/LootDeckSelectModal'
 
 function HomePage() {
 
