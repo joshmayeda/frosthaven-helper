@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react'
-import EnemyTile from './Components/EnemyTile'
-import EnemyModal from './Components/EnemyModal'
+import EnemyTile from './EnemyTile'
+import EnemyModal from './EnemyModal'
 import monsterAttackModifierCardBack from '../public/img/monster-att-mod/monster_back.png'
 import dice from '../public/img/icons8-dice-80.png';
 
