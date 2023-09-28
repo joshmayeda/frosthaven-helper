@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Button, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import ItemCounter from "./ItemCounter";
+import { StaticImageData } from "next/image";
+
+type LootCard = {
+    src: string;
+    alt: string;
+    key: number;
+  }
 
 type LootDeckSelectModalProps = {
 	coins: number;
@@ -23,12 +30,13 @@ type LootDeckSelectModalProps = {
 	setArrowvine: React.Dispatch<React.SetStateAction<number>>;
 	corpsecap: number;
 	setCorpsecap: React.Dispatch<React.SetStateAction<number>>;
-	randomItem: number;
-	setRandomItem: React.Dispatch<React.SetStateAction<number>>;
+	randomItem: boolean;
+	setRandomItem: React.Dispatch<React.SetStateAction<boolean>>;
 	total: number;
-	setTotal: React.Dispatch<React.SetStateAction<number>>;
-	sectionCoins: boolean;
-	setSectionCoins: React.Dispatch<React.SetStateAction<boolean>>;
+	scenarioCoins: boolean;
+	setDiscardPile: React.Dispatch<React.SetStateAction<LootCard[]>>;
+	setScenarioCoins: React.Dispatch<React.SetStateAction<boolean>>;
+	createLootDeck: () => void;
 };
 
 const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
@@ -55,14 +63,26 @@ const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
 	randomItem,
 	setRandomItem,
 	total,
-	setTotal,
-	sectionCoins,
-	setSectionCoins
+	scenarioCoins,
+	setDiscardPile,
+	setScenarioCoins,
+	createLootDeck,
+
 }) => {
   const [showLootDeckSelectModal, setShowLootDeckSelectModal] = useState(false);
 
-  const handleSectionCoins = () => {
-    setSectionCoins(!sectionCoins);
+	const handleRandomItem = () => {
+		setRandomItem(!randomItem);
+  	};
+
+  const handleScenarioCoins = () => {
+    setScenarioCoins(!scenarioCoins);
+  };
+
+  const handleConfirm = () => {
+	createLootDeck();
+	setDiscardPile([]);
+	setShowLootDeckSelectModal(false);
   };
 
   return (
@@ -83,19 +103,8 @@ const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
                 {/*body*/}
                 <div className="flex flex-col w-11/12 mt-8 bg-white self-center">
 					<div className="grid grid-cols-2 justify-self-center">
-						<div className="flex items-center text-black h-12 justify-self-center border-b-2">
-						Coins
-						<FormGroup className="p-4">
-							<FormControlLabel
-							control={<Checkbox />}
-							labelPlacement="end"
-							label="Section Coins"
-							checked={sectionCoins}
-							onClick={handleSectionCoins}
-							/>
-						</FormGroup>
-						</div>
-						{sectionCoins ? <ItemCounter startingValue={0} maxValue={22} value={coins} setItemValue={setCoins}/> : <ItemCounter startingValue={0} maxValue={20} value={coins} setItemValue={setCoins} />}
+						<div className="flex items-center text-black h-12 justify-self-center border-b-2">Coins</div>
+						{scenarioCoins ? <ItemCounter startingValue={0} maxValue={22} value={coins} setItemValue={setCoins}/> : <ItemCounter startingValue={0} maxValue={20} value={coins} setItemValue={setCoins} />}
 						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Lumber</div>
 						<ItemCounter startingValue={0} maxValue={8} value={lumber} setItemValue={setLumber} />
 						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Metal</div>
@@ -114,8 +123,24 @@ const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
 						<ItemCounter startingValue={0} maxValue={2} value={arrowvine} setItemValue={setArrowvine} />
 						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Corpsecap</div>
 						<ItemCounter startingValue={0} maxValue={2} value={corpsecap} setItemValue={setCorpsecap} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Random Item</div>
-						<ItemCounter startingValue={0} maxValue={1} value={randomItem} setItemValue={setRandomItem} />
+						<FormGroup className="flex items-center text-black h-12 self-center justify-self-center border-b-2">
+							<FormControlLabel
+							control={<Checkbox />}
+							labelPlacement="start"
+							label="Random Item"
+							checked={randomItem}
+							onClick={handleRandomItem}
+							/>
+						</FormGroup>
+						<FormGroup className="flex items-center text-black h-12 self-center justify-self-center border-b-2">
+							<FormControlLabel
+							control={<Checkbox />}
+							labelPlacement="start"
+							label="Scenario Coins"
+							checked={scenarioCoins}
+							onClick={handleScenarioCoins}
+							/>
+						</FormGroup>
 						<div className="flex items-center text-black h-12 self-center justify-self-center font-bold">Total</div>
 						<div className="flex items-center text-black h-12 self-center justify-self-center font-bold">{total}</div>
 					</div>
@@ -132,7 +157,7 @@ const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
                   <button
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowLootDeckSelectModal(false)}
+                    onClick={handleConfirm}
                   >
                     Add
                   </button>
