@@ -103,27 +103,27 @@ const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
                 {/*body*/}
                 <div className="flex flex-col w-11/12 mt-8 bg-white self-center">
 					<div className="grid grid-cols-2 justify-self-center">
-						<div className="flex items-center text-black h-12 justify-self-center border-b-2">Coins</div>
+						<div className="flex items-center text-black lg:h-12 justify-self-center border-b-2">Coins</div>
 						{scenarioCoins ? <ItemCounter startingValue={0} maxValue={22} value={coins} setItemValue={setCoins}/> : <ItemCounter startingValue={0} maxValue={20} value={coins} setItemValue={setCoins} />}
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Lumber</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Lumber</div>
 						<ItemCounter startingValue={0} maxValue={8} value={lumber} setItemValue={setLumber} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Metal</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Metal</div>
 						<ItemCounter startingValue={0} maxValue={8} value={metal} setItemValue={setMetal} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Hide</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Hide</div>
 						<ItemCounter startingValue={0} maxValue={8} value={hide} setItemValue={setHide} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Flamefruit</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Flamefruit</div>
 						<ItemCounter startingValue={0} maxValue={2} value={flamefruit} setItemValue={setFlamefruit} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Rockroot</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Rockroot</div>
 						<ItemCounter startingValue={0} maxValue={2} value={rockroot} setItemValue={setRockroot} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Snowthistle</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Snowthistle</div>
 						<ItemCounter startingValue={0} maxValue={2} value={snowthistle} setItemValue={setSnowthistle} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Axenut</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Axenut</div>
 						<ItemCounter startingValue={0} maxValue={2} value={axenut} setItemValue={setAxenut} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Arrowvine</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Arrowvine</div>
 						<ItemCounter startingValue={0} maxValue={2} value={arrowvine} setItemValue={setArrowvine} />
-						<div className="flex items-center text-black h-12 self-center justify-self-center border-b-2">Corpsecap</div>
+						<div className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">Corpsecap</div>
 						<ItemCounter startingValue={0} maxValue={2} value={corpsecap} setItemValue={setCorpsecap} />
-						<FormGroup className="flex items-center text-black h-12 self-center justify-self-center border-b-2">
+						<FormGroup className="flex items-center text-black lg:h-12 self-center justify-self-center border-b-2">
 							<FormControlLabel
 							control={<Checkbox />}
 							labelPlacement="start"

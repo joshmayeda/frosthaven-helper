@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from '@mui/material';
+import useWindowSize from '@rooks/use-window-size';
 
 function HomePage() {
 
@@ -11,6 +12,9 @@ function HomePage() {
         <Button variant="contained" className="bg-green-600 font-bold">
           <a href="/lootdeck">Loot Deck Creator</a>
         </Button>
+        <div>
+          window size: {window.screen.width}
+        </div>
       </main>
     </div>
   )

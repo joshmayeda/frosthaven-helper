@@ -5,9 +5,11 @@ import { Button } from "@mui/material";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import LootDeckSelectModal from "./LootDeckSelectModal";
+import LootDeckSelectModalMobile from "./LootDeckSelectModalMobile";
 import lootDeckBack from "public/img/loot-deck/fh-loot-deck-back.png";
 import transparentImage from "public/img/transparent-card.png";
 import randomItemImage from "public/img/loot-deck/fh-random-item-1417.png";
+import useWindowSize from "@rooks/use-window-size";
 
 const LootDeck: React.FC = () => {
 
@@ -273,8 +275,8 @@ const LootDeck: React.FC = () => {
   return (
     <div className="overflow-y-auto overflow-x-hidden">
       <main className="flex min-h-screen divide-y-1 items-center justify-center">
-        <div className="flex h-11/12 w-11/12 justify-center gap-32">
-          <div className="outline outline-white w-391 h-600 rounded-xl text-white text-center">
+        <div className="flex flex-col lg:flex-row h-11/12 w-11/12 justify-center gap-12 lg:gap-32">
+          <div className="outline outline-white h-52 lg:w-391 lg:h-600 rounded-xl text-white text-center">
             {lootDeck.length > 0 ? (
               <Button disableRipple onClick={drawLootCard} className="w-full h-full p-0">
                 <Image
@@ -291,36 +293,39 @@ const LootDeck: React.FC = () => {
               </div>
             )}
           </div>
-          <LootDeckSelectModal
-            coins={coins}
-            setCoins={setCoins}
-            lumber={lumber}
-            setLumber={setLumber}
-            metal={metal}
-            setMetal={setMetal}
-            hide={hide}
-            setHide={setHide}
-            flamefruit={flamefruit}
-            setFlamefruit={setFlamefruit}
-            rockroot={rockroot}
-            setRockroot={setRockroot}
-            snowthistle={snowthistle}
-            setSnowthistle={setSnowthistle}
-            axenut={axenut}
-            setAxenut={setAxenut}
-            arrowvine={arrowvine}
-            setArrowvine={setArrowvine}
-            corpsecap={corpsecap}
-            setCorpsecap={setCorpsecap}
-            randomItem={randomItem}
-            setRandomItem={setRandomItem}
-            total={total}
-            scenarioCoins={scenarioCoins}
-            setDiscardPile={setDiscardPile}
-            setScenarioCoins={setScenarioCoins}
-            createLootDeck={createLootDeck}
-          />
-          <div className="outline outline-white w-391 h-600 rounded-xl text-white text-center">
+          {window.screen.width > 375 ? (
+            <LootDeckSelectModal
+              coins={coins}
+              setCoins={setCoins}
+              lumber={lumber}
+              setLumber={setLumber}
+              metal={metal}
+              setMetal={setMetal}
+              hide={hide}
+              setHide={setHide}
+              flamefruit={flamefruit}
+              setFlamefruit={setFlamefruit}
+              rockroot={rockroot}
+              setRockroot={setRockroot}
+              snowthistle={snowthistle}
+              setSnowthistle={setSnowthistle}
+              axenut={axenut}
+              setAxenut={setAxenut}
+              arrowvine={arrowvine}
+              setArrowvine={setArrowvine}
+              corpsecap={corpsecap}
+              setCorpsecap={setCorpsecap}
+              randomItem={randomItem}
+              setRandomItem={setRandomItem}
+              total={total}
+              scenarioCoins={scenarioCoins}
+              setDiscardPile={setDiscardPile}
+              setScenarioCoins={setScenarioCoins}
+              createLootDeck={createLootDeck}
+            />) : (
+              <LootDeckSelectModalMobile />
+            )}
+          <div className="outline outline-white h-52 lg:w-391 lg:h-600 rounded-xl text-white text-center">
             {discardPile.length > 0 ? (
               <Image
                 src={discardPile[discardPile.length - 1].src}
