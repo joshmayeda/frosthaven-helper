@@ -5,7 +5,6 @@ import { Button } from "@mui/material";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import LootDeckSelectModal from "./LootDeckSelectModal";
-import LootDeckSelectModalMobile from "./LootDeckSelectModalMobile";
 import lootDeckBack from "public/img/loot-deck/fh-loot-deck-back.png";
 import transparentImage from "public/img/transparent-card.png";
 import randomItemImage from "public/img/loot-deck/fh-random-item-1417.png";
@@ -150,7 +149,7 @@ const LootDeck: React.FC = () => {
     }
     for (let i = 0; i < coins; i++) {
       if(!scenarioCoins) {
-        tempCoinArray = tempCoinArray.filter((coin) => coin.alt !== "Coin");
+        tempCoinArray = tempCoinArray.filter((coin) => coin.alt === "Coin");
       }
       tempCoinArray.sort(() => Math.random() - 0.5);
       let tempCoin = tempCoinArray.pop();
@@ -275,25 +274,23 @@ const LootDeck: React.FC = () => {
   return (
     <div className="overflow-y-auto overflow-x-hidden">
       <main className="flex min-h-screen divide-y-1 items-center justify-center">
-        <div className="flex flex-col lg:flex-row h-11/12 w-11/12 justify-center gap-12 lg:gap-32">
-          <div className="outline outline-white h-52 lg:w-391 lg:h-600 rounded-xl text-white text-center">
+        <div className="flex flex-col xl:flex-row h-11/12 w-11/12 justify-center gap-1 xl:gap-32">
+          <div className="relative self-center outline outline-white w-2/3 h-90 rotate-90 xs:h-72 xs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
             {lootDeck.length > 0 ? (
               <Button disableRipple onClick={drawLootCard} className="w-full h-full p-0">
                 <Image
                   src={lootDeckBack}
                   alt="Loot Deck Back"
-                  className="min-h-fit rounded-xl text-white text-center"
-                  width={391}
-                  height={600}
+                  layout="fill"
+                  className="xl:rotate-0 rounded-xl"
                 />
               </Button>
             ) : (
-              <div className="flex justify-center items-center h-full">
+              <div className="flex justify-center items-center h-full -rotate-90 xl:rotate-0">
                 Loot Deck
               </div>
             )}
           </div>
-          {window.screen.width > 375 ? (
             <LootDeckSelectModal
               coins={coins}
               setCoins={setCoins}
@@ -322,20 +319,17 @@ const LootDeck: React.FC = () => {
               setDiscardPile={setDiscardPile}
               setScenarioCoins={setScenarioCoins}
               createLootDeck={createLootDeck}
-            />) : (
-              <LootDeckSelectModalMobile />
-            )}
-          <div className="outline outline-white h-52 lg:w-391 lg:h-600 rounded-xl text-white text-center">
+            />
+          <div className="relative self-center outline outline-white w-2/3 h-90 rotate-90 xs:h-72 xs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
             {discardPile.length > 0 ? (
               <Image
                 src={discardPile[discardPile.length - 1].src}
                 alt={discardPile[discardPile.length - 1].alt}
-                className="min-h-fit rounded-xl text-white text-center"
-                width={391}
-                height={600}
+                layout="fill"
+                className="xl:rotate-0 rounded-xl"
               />
             ) : (
-              <div className="flex justify-center items-center h-full">
+              <div className="flex justify-center items-center h-full -rotate-90 xl:rotate-0">
                 Discard Pile
               </div>
             )}

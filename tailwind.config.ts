@@ -19,7 +19,17 @@ const config: Config = {
       },
       height: {
         600: '600px',
+        90: '22rem',
+        128: '28rem',
       },
+    },
+    screens: {
+      xs: '375px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
+      xxl: '1536px',
     },
   },
   plugins: [],
