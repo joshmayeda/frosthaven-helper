@@ -273,8 +273,13 @@ const LootDeck: React.FC = () => {
 
   return (
     <div className="overflow-y-hidden overflow-x-hidden">
+<<<<<<< HEAD
       <main className="flex min-h-screen divide-y-1 items-center justify-center xs:overflow-hidden">
         <div className="flex flex-col xl:flex-row h-11/12 w-11/12 justify-center xl:gap-32">
+=======
+      <main className="flex min-h-screen divide-y-1 items-center justify-center xxs:overflow-hidden">
+        <div className="flex flex-col xl:flex-row h-11/12 w-11/12 justify-center xl:gap-32 xxs:overflow-y-hidden">
+>>>>>>> fa1b1e5ced088cea11dff0d34ab8309b54fd7917
           <div className="absolute xxs:top-12 xs:top-32 sm:relative sm:top-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-72 xxs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
             {lootDeck.length > 0 ? (
               <Button disableRipple onClick={drawLootCard} className="w-full h-full p-0">
@@ -320,7 +325,11 @@ const LootDeck: React.FC = () => {
               setScenarioCoins={setScenarioCoins}
               createLootDeck={createLootDeck}
             />
+<<<<<<< HEAD
           <div className="absolute xxs:bottom-24 xs:bottom-32 sm:relative sm:bottom-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-72 xxs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
+=======
+          <div className="absolute xxs:bottom-12 xs:bottom-32 sm:relative sm:bottom-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-72 xxs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
+>>>>>>> fa1b1e5ced088cea11dff0d34ab8309b54fd7917
             {discardPile.length > 0 ? (
               <Image
                 src={discardPile[discardPile.length - 1].src}
