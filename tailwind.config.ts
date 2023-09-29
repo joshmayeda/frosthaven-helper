@@ -24,6 +24,7 @@ const config: Config = {
       },
     },
     screens: {
+      xxsTall: { raw: '(width: 375px) and (height: 629px)' },
       xxs: '375px',
       xs: '390px',
       sm: '640px',

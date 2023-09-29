@@ -87,7 +87,7 @@ const LootDeckSelectModal: React.FC<LootDeckSelectModalProps> = ({
 
   return (
     <>
-      <Button variant="contained" onClick={() => setShowLootDeckSelectModal(true)} className="flex h-20 xxs:h-10 xs:h-12 self-center bg-green-600 font-bold">
+      <Button variant="contained" onClick={() => setShowLootDeckSelectModal(true)} className="flex h-10 xs:h-12 self-center bg-green-600 font-bold">
         EDIT LOOT DECK
       </Button>
       {showLootDeckSelectModal ? (

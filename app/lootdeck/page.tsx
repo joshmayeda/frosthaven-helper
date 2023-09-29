@@ -275,7 +275,7 @@ const LootDeck: React.FC = () => {
     <div className="overflow-y-hidden overflow-x-hidden">
       <main className="flex min-h-screen divide-y-1 items-center justify-center xxs:overflow-hidden">
         <div className="flex flex-col xl:flex-row h-11/12 w-11/12 justify-center xl:gap-32 xxs:overflow-y-hidden">
-          <div className="absolute xxs:top-8 xs:top-32 sm:relative sm:top-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-64 xxs:w-5/12 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
+          <div className="absolute overflow-hidden xxs:top-0 xs:top-32 sm:relative sm:top-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-64 xxs:w-5/12 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
             {lootDeck.length > 0 ? (
               <Button disableRipple onClick={drawLootCard} className="w-full h-full p-0">
                 <Image
