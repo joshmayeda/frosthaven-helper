@@ -74,7 +74,7 @@ const LootDeck: React.FC = () => {
     {src: "/img/loot-deck/corpsecap/fh-corpsecap-1386.png", alt: "Corpsecap", key: 2}
   ]
 
-  const LumberArray = [
+  const LumberArray:LootCard[] = [
     {src: "/img/loot-deck/lumber/fh-lumber-1401.png", alt: "Lumber", key: 1},
     {src: "/img/loot-deck/lumber/fh-lumber-1402.png", alt: "Lumber", key: 2},
     {src: "/img/loot-deck/lumber/fh-lumber-1403.png", alt: "Lumber", key: 3},
@@ -85,7 +85,7 @@ const LootDeck: React.FC = () => {
     {src: "/img/loot-deck/lumber/fh-lumber-1408.png", alt: "Lumber", key: 8}
   ]
 
-  const MetalArray = [
+  const MetalArray:LootCard[] = [
     {src: "/img/loot-deck/metal/fh-metal-1409.png", alt: "Metal", key: 1},
     {src: "/img/loot-deck/metal/fh-metal-1410.png", alt: "Metal", key: 2},
     {src: "/img/loot-deck/metal/fh-metal-1411.png", alt: "Metal", key: 3},
@@ -96,7 +96,7 @@ const LootDeck: React.FC = () => {
     {src: "/img/loot-deck/metal/fh-metal-1416.png", alt: "Metal", key: 8}
   ]
 
-  const HideArray = [
+  const HideArray:LootCard[] = [
     {src: "/img/loot-deck/hide/fh-hide-1393.png", alt: "Hide", key: 1},
     {src: "/img/loot-deck/hide/fh-hide-1394.png", alt: "Hide", key: 2},
     {src: "/img/loot-deck/hide/fh-hide-1395.png", alt: "Hide", key: 3},
@@ -107,17 +107,17 @@ const LootDeck: React.FC = () => {
     {src: "/img/loot-deck/hide/fh-hide-1400.png", alt: "Hide", key: 8}
   ]
 
-  const FlamefruitArray = [
+  const FlamefruitArray:LootCard[] = [
     {src: "/img/loot-deck/flamefruit/fh-flamefruit-1387.png", alt: "Flamefruit", key: 1},
     {src: "/img/loot-deck/flamefruit/fh-flamefruit-1388.png", alt: "Flamefruit", key: 2}
   ]
   
-  const RockrootArray = [
+  const RockrootArray:LootCard[] = [
     {src: "/img/loot-deck/rockroot/fh-rockroot-1389.png", alt: "Rockroot", key: 1},
     {src: "/img/loot-deck/rockroot/fh-rockroot-1390.png", alt: "Rockroot", key: 2}
   ]
 
-  const SnowthistleArray = [
+  const SnowthistleArray:LootCard[] = [
     {src: "/img/loot-deck/snowthistle/fh-snowthistle-1391.png", alt: "Snowthistle", key: 1},
     {src: "/img/loot-deck/snowthistle/fh-snowthistle-1392.png", alt: "Snowthistle", key: 2}
   ]
@@ -275,7 +275,7 @@ const LootDeck: React.FC = () => {
     <div className="overflow-y-hidden overflow-x-hidden">
       <main className="flex min-h-screen divide-y-1 items-center justify-center xxs:overflow-hidden">
         <div className="flex flex-col xl:flex-row h-11/12 w-11/12 justify-center xl:gap-32 xxs:overflow-y-hidden">
-          <div className="absolute xxs:top-12 xs:top-32 sm:relative sm:top-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-72 xxs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
+          <div className="absolute xxs:top-8 xs:top-32 sm:relative sm:top-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-64 xxs:w-5/12 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
             {lootDeck.length > 0 ? (
               <Button disableRipple onClick={drawLootCard} className="w-full h-full p-0">
                 <Image
@@ -320,7 +320,7 @@ const LootDeck: React.FC = () => {
               setScenarioCoins={setScenarioCoins}
               createLootDeck={createLootDeck}
             />
-          <div className="absolute xxs:bottom-12 xs:bottom-32 sm:relative sm:bottom-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-72 xxs:w-1/2 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
+          <div className="absolute xxs:bottom-8 xs:bottom-32 sm:relative sm:bottom-0 self-center outline outline-white w-2/3 h-90 rotate-90 xxs:h-64 xxs:w-5/12 md:self-center md:h-128 md:w-5/12 xl:w-391 xl:h-600 xl:rotate-0 rounded-xl text-white text-center">
             {discardPile.length > 0 ? (
               <Image
                 src={discardPile[discardPile.length - 1].src}
