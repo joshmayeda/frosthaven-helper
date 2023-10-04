@@ -58,7 +58,7 @@ const EnemyModal:React.FC<EnemyModalProps> = ({ showEnemyModal, setShowEnemyModa
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
+                <div className="relative p-6 flex-auto overflow-scroll">
                 <Combobox onChange={setSelectedEnemy}>
                   <Combobox.Input onChange={(event) => setQuery(event.target.value)} className="border-2" />
                   <Combobox.Options>
