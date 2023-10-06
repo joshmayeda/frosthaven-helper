@@ -22,6 +22,16 @@ const config: Config = {
         90: '22rem',
         128: '28rem',
       },
+      spacing: {
+        68: '17rem',
+        76: '19rem',
+        84: '21rem',
+        88: '22rem',
+        92: '23rem',
+        96: '24rem',
+        100: '25rem',
+        104: '26rem',
+      },
     },
     screens: {
       xxsTall: { raw: '(width: 375px) and (height: 629px)' },
