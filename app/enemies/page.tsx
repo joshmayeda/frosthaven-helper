@@ -135,7 +135,7 @@ const EnemyPage:React.FC = () => {
   const [abilityDeck, setAbilityDeck] = useState<string[]>([]);
   const [showAttackDrawModal, setShowAttackDrawModal] = useState(false);
   const [showAbilityDrawModal, setShowAbilityDrawModal] = useState(false);
-  const [drawnCard, setDrawnCard] = useState("");
+  const [drawnCard, setDrawnCard] = useState<string>("");
   const [discardPile, setDiscardPile] = useState<string[]>([]);
   const [enemyTiles, setEnemyTiles] = useState<JSX.Element[]>([]);
 
@@ -166,7 +166,7 @@ const EnemyPage:React.FC = () => {
       console.log("attMod: " + attackModifierDeck)
       setDiscardPile([]);
     }
-    let tempCard = tempDeck.pop();
+    let tempCard = tempDeck.pop()!;
     if (tempCard) {
       tempDiscardPile.push(tempCard);
     }
@@ -203,8 +203,8 @@ const EnemyPage:React.FC = () => {
       console.log("attMod: " + abilityDeck)
       setDiscardPile([]);
     }
-    let tempCard = tempDeck.pop();
-    if (tempCard) {
+    let tempCard:string = tempDeck.pop()!;
+    if (tempDeck.length > 0) {
       tempDiscardPile.push(tempCard);
     }
     setDrawnCard(tempCard);
