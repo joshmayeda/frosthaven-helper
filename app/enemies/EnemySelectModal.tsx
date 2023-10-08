@@ -29,7 +29,7 @@ const EnemySelectModal:React.FC<EnemySelectModalProps> = ({ showEnemyModal, setS
         })
 
   const handleConfirm = () => {
-    setEnemyTiles([...enemyTiles, <EnemyTile name={selectedEnemy} level={level} elite={elite} key={enemyTiles.length} />]);
+    setEnemyTiles([...enemyTiles, <EnemyTile name={selectedEnemy} level={level} boss={false} key={enemyTiles.length} />]);
     setShowEnemyModal(false);
   }  
 
