@@ -215,8 +215,8 @@ const EnemyPage:React.FC = () => {
 
   return (
     <div className="overflow-y-hidden overflow-x-hidden">
-      <main className="flex flex-col xxs:min-h-screen">
-        <div className="flex flex-col gap-10 min-h-screen min-w-screen overflow-scroll">
+      <main className="grid grid-cols-4 xxs:min-h-screen">
+        <div className="flex flex-col col-span-4 gap-10 overflow-scroll">
           {enemyTiles}
         </div>
         <EnemySelectModal 
@@ -226,24 +226,25 @@ const EnemyPage:React.FC = () => {
           enemyTiles={enemyTiles}
           setEnemyTiles={setEnemyTiles}
         />
-        <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="xxs:fixed xxs:left-5 xxs:bottom-5 xxs:w-1/6 xxl:right-10 xxl:bottom-10 xxs:bg-green-500 text-black">EDIT ATTACK</Button>
-        <AttackModifierModal
-          showAttackModifierModal={showAttackModifierModal}
-          setShowAttackModifierModal={setShowAttackModifierModal}
-          attackModifierDeck={attackModifierDeckBase}
-          setAttackModifierDeck={setAttackModifierDeck}
-          curses={monsterCurses}
-          blesses={monsterBlesses}
-        />
-        {attackModifierDeck.length > 0 ?
-          (<Button variant="contained" onClick={drawAttackCard} className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">DRAW ATTACK</Button>)
-          : (
-            <Button variant="contained" onClick={shuffleAttackDeck} className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">SHUFFLE ATTACK</Button>
-          )
-        }
-        <AttackDrawModal drawnCard={drawnCard} showAttackDrawModal={showAttackDrawModal} setShowAttackDrawModal={setShowAttackDrawModal} />
-        <Button variant="contained" onClick={() => setShowAbilityDrawModal(true)} className="fixed left-48 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">DRAW ABILITY</Button>
-        <AbilityDrawModal showAbilityDrawModal={showAbilityDrawModal} setShowAbilityDrawModal={setShowAbilityDrawModal} enemyTiles={enemyTiles} setEnemyTiles={setEnemyTiles} />
+        <div className="flex flex-col col-span-4 overflow-scroll">
+          <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="fixed left-5 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">EDIT ATTACK</Button>
+          <AttackModifierModal
+            showAttackModifierModal={showAttackModifierModal}
+            setShowAttackModifierModal={setShowAttackModifierModal}
+            attackModifierDeck={attackModifierDeckBase}
+            setAttackModifierDeck={setAttackModifierDeck}
+            curses={monsterCurses}
+            blesses={monsterBlesses}
+          />
+          {attackModifierDeck.length > 0 ?
+            (
+              <Button variant="contained" onClick={drawAttackCard} className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">DRAW ATTACK</Button>
+            ) : (
+              <Button variant="contained" onClick={shuffleAttackDeck} className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">SHUFFLE ATTACK</Button>
+            )
+          }
+          <AttackDrawModal drawnCard={drawnCard} showAttackDrawModal={showAttackDrawModal} setShowAttackDrawModal={setShowAttackDrawModal} />
+        </div>
       </main>
     </div>
   )
