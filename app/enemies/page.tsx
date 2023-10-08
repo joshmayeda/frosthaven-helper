@@ -214,7 +214,7 @@ const EnemyPage:React.FC = () => {
   }
 
   return (
-    <div className="overflow-y-auto overflow-x-hidden">
+    <div className="overflow-y-hidden overflow-x-hidden">
       <main className="flex flex-col min-h-screen">
         <div className="flex flex-col gap-10 min-h-screen min-w-screen overflow-scroll">
           {enemyTiles}
@@ -226,7 +226,7 @@ const EnemyPage:React.FC = () => {
           enemyTiles={enemyTiles}
           setEnemyTiles={setEnemyTiles}
         />
-        <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="fixed xxs:left-5 xxs:bottom-5 xxs:w-1/6 xxl:right-10 xxl:bottom-10 xxs:bg-green-500 text-black">EDIT ATTACK</Button>
+        <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="xxs:fixed xxs:left-5 xxs:bottom-5 xxs:w-1/6 xxl:right-10 xxl:bottom-10 xxs:bg-green-500 text-black">EDIT ATTACK</Button>
         <AttackModifierModal
           showAttackModifierModal={showAttackModifierModal}
           setShowAttackModifierModal={setShowAttackModifierModal}
