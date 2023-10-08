@@ -135,7 +135,7 @@ const EnemyPage:React.FC = () => {
   const [abilityDeck, setAbilityDeck] = useState<string[]>([]);
   const [showAttackDrawModal, setShowAttackDrawModal] = useState(false);
   const [showAbilityDrawModal, setShowAbilityDrawModal] = useState(false);
-  const [drawnCard, setDrawnCard] = useState<string>();
+  const [drawnCard, setDrawnCard] = useState("");
   const [discardPile, setDiscardPile] = useState<string[]>([]);
   const [enemyTiles, setEnemyTiles] = useState<JSX.Element[]>([]);
 

@@ -7,7 +7,7 @@ import EnemyTile from "./EnemyTile";
 type AttackDrawModalProps = {
     showAttackDrawModal: boolean;
     setShowAttackDrawModal: React.Dispatch<React.SetStateAction<boolean>>;
-    drawnCard: string | undefined;
+    drawnCard: string;
 }
 
 
