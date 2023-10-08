@@ -215,7 +215,7 @@ const EnemyPage:React.FC = () => {
 
   return (
     <div className="overflow-y-hidden overflow-x-hidden">
-      <main className="flex flex-col min-h-screen">
+      <main className="flex flex-col xxs:min-h-screen">
         <div className="flex flex-col gap-10 min-h-screen min-w-screen overflow-scroll">
           {enemyTiles}
         </div>
