@@ -226,7 +226,7 @@ const EnemyPage:React.FC = () => {
           enemyTiles={enemyTiles}
           setEnemyTiles={setEnemyTiles}
         />
-        <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="fixed left-5 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">EDIT ATTACK</Button>
+        <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="fixed xxs:left-5 xxs:bottom-5 xxs:w-1/6 xxl:right-10 xxl:bottom-10 xxs:bg-green-500 text-black">EDIT ATTACK</Button>
         <AttackModifierModal
           showAttackModifierModal={showAttackModifierModal}
           setShowAttackModifierModal={setShowAttackModifierModal}
