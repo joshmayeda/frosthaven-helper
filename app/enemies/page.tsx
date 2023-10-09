@@ -1,15 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react'
-import EnemyTile from './EnemyTile'
 import EnemySelectModal from './EnemySelectModal'
 import AttackModifierModal from './AttackModifierModal'
-import AbilityDrawModal from './AbilityDrawModal';
 import { Button } from '@mui/material'
-import Image, { StaticImageData } from 'next/image';
-import abaelHerder from 'public/img/monster-stats/processed/fh-abael-herder-0.png';
-import monsterAttackModifierCardBack from 'public/img/monster-att-mod/monster_back.png'
-import dice from 'public/img/icons8-dice-80.png';
 import AttackDrawModal from './AttackDrawModal';
 
 const enemyNames = [
@@ -216,7 +210,7 @@ const EnemyPage:React.FC = () => {
   return (
     <div className="overflow-y-hidden overflow-x-hidden">
       <main className="grid grid-cols-4 xxs:min-h-screen">
-        <div className="flex flex-col col-span-4 gap-10 overflow-scroll">
+        <div className="flex flex-col col-span-4 gap-10">
           {enemyTiles}
         </div>
         <EnemySelectModal 
@@ -226,7 +220,7 @@ const EnemyPage:React.FC = () => {
           enemyTiles={enemyTiles}
           setEnemyTiles={setEnemyTiles}
         />
-        <div className="flex flex-col col-span-4 overflow-scroll">
+        <div className="flex flex-col col-span-4 overflow-hidden">
           <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="fixed left-5 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">EDIT ATTACK</Button>
           <AttackModifierModal
             showAttackModifierModal={showAttackModifierModal}
@@ -238,9 +232,9 @@ const EnemyPage:React.FC = () => {
           />
           {attackModifierDeck.length > 0 ?
             (
-              <Button variant="contained" onClick={drawAttackCard} className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">DRAW ATTACK</Button>
+              <Button variant="contained" onClick={drawAttackCard} className="fixed left-24 bottom-5 w-1/6 xxl:left-50 xxl:bottom-10 bg-green-500 text-black">DRAW ATTACK</Button>
             ) : (
-              <Button variant="contained" onClick={shuffleAttackDeck} className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">SHUFFLE ATTACK</Button>
+              <Button variant="contained" onClick={shuffleAttackDeck} className="fixed left-24 bottom-5 w-1/6 xxl:left-30 xxl:bottom-10 bg-green-500 text-black">SHUFFLE ATTACK</Button>
             )
           }
           <AttackDrawModal drawnCard={drawnCard} showAttackDrawModal={showAttackDrawModal} setShowAttackDrawModal={setShowAttackDrawModal} />

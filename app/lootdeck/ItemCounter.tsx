@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image, { StaticImageData } from 'next/image';
 import { Button } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
