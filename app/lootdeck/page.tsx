@@ -3,12 +3,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import Image from "next/image";
-import { StaticImageData } from "next/image";
 import LootDeckSelectModal from "./LootDeckSelectModal";
 import lootDeckBack from "public/img/loot-deck/fh-loot-deck-back.png";
-import transparentImage from "public/img/transparent-card.png";
 import randomItemImage from "public/img/loot-deck/fh-random-item-1417.png";
-import useWindowSize from "@rooks/use-window-size";
 
 const LootDeck: React.FC = () => {
 
