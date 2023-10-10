@@ -17,10 +17,10 @@ const AttackDrawModal:React.FC<AttackDrawModalProps> = ({ showAttackDrawModal, s
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none p-5">
             <div className="flex w-3/4 h-1/4">
               {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-full bg-white outline-none focus:outline-none">
+              <button onClick={() => setShowAttackDrawModal(false)} className="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-full bg-white outline-none focus:outline-none">
                 <Image src={drawnCard} height={300} width={300} alt="Drawn Card" />
-              </div>
-              <button className="absolute top-30 right-16 text-white" onClick={() => setShowAttackDrawModal(false)}>X</button>
+              </button>
+              {/* <button className="absolute top-30 right-16 text-white" onClick={() => setShowAttackDrawModal(false)}>X</button> */}
             </div>
           </div>
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
