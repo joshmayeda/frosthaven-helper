@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from '@mui/material'
 import Image, { StaticImageData } from 'next/image';
 import Picker from 'react-mobile-picker';
 import baneActive from 'public/img/conditions/fh-bane-condition.png';
@@ -218,51 +217,51 @@ const EnemyStatModal:React.FC<EnemyStatModalProps> = ({ showStatModal, setShowSt
                     <input placeholder={props.retaliate} onChange={(e) => props.setRetaliate(Number(e.target.value))} className="text-center border-b-2"></input>
                   </div>
                   <div className="grid grid-cols-5 gap-2 mt-4">
-                    <Button className="" onClick={() => handleBaneClick()}>
+                    <button className="" onClick={() => handleBaneClick()}>
                       <Image src={bane} alt="Bane" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleBlessClick()}>
+                    </button>
+                    <button className="" onClick={() => handleBlessClick()}>
                       <Image src={bless} alt="Bless" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleBrittleClick()}>
+                    </button>
+                    <button className="" onClick={() => handleBrittleClick()}>
                       <Image src={brittle} alt="Brittle" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleCurseClick()}>
+                    </button>
+                    <button className="" onClick={() => handleCurseClick()}>
                       <Image src={curse} alt="Curse" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleDisarmClick()}>
+                    </button>
+                    <button className="" onClick={() => handleDisarmClick()}>
                       <Image src={disarm} alt="Disarm" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleImmobilizeClick()}>
+                    </button>
+                    <button className="" onClick={() => handleImmobilizeClick()}>
                       <Image src={immobilize} alt="Immobilize" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleImpairClick()}>
+                    </button>
+                    <button className="" onClick={() => handleImpairClick()}>
                       <Image src={impair} alt="Impair" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleInvisibleClick()}>
+                    </button>
+                    <button className="" onClick={() => handleInvisibleClick()}>
                       <Image src={invisible} alt="Invisible" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleMuddleClick()}>
+                    </button>
+                    <button className="" onClick={() => handleMuddleClick()}>
                       <Image src={muddle} alt="Muddle" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handlePoisonClick()}>
+                    </button>
+                    <button className="" onClick={() => handlePoisonClick()}>
                       <Image src={poison} alt="Poison" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleRegenerateClick()}>
+                    </button>
+                    <button className="" onClick={() => handleRegenerateClick()}>
                       <Image src={regenerate} alt="Regenerate" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleStrengthenClick()}>
+                    </button>
+                    <button className="" onClick={() => handleStrengthenClick()}>
                       <Image src={strengthen} alt="Strengthen" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleStunClick()}>
+                    </button>
+                    <button className="" onClick={() => handleStunClick()}>
                       <Image src={stun} alt="Stun" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleWardClick()}>
+                    </button>
+                    <button className="" onClick={() => handleWardClick()}>
                       <Image src={ward} alt="Ward" height={40} width={40} />
-                    </Button>
-                    <Button className="" onClick={() => handleWoundClick()}>
+                    </button>
+                    <button className="" onClick={() => handleWoundClick()}>
                       <Image src={wound} alt="Wound" height={40} width={40} />
-                    </Button>
+                    </button>
                   </div>
                 </div>
                 {/*footer*/}

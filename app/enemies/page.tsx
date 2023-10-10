@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import EnemySelectModal from './EnemySelectModal'
 import AttackModifierModal from './AttackModifierModal'
-import { Button } from '@mui/material'
 import AttackDrawModal from './AttackDrawModal';
 
 const enemyNames = [
@@ -221,7 +220,7 @@ const EnemyPage:React.FC = () => {
           setEnemyTiles={setEnemyTiles}
         />
         <div className="flex flex-col col-span-4 overflow-hidden">
-          <Button variant="contained" onClick={() => setShowAttackModifierModal(true)} className="fixed left-5 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">EDIT ATTACK</Button>
+          <button onClick={() => setShowAttackModifierModal(true)} className="fixed left-5 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">EDIT ATTACK</button>
           <AttackModifierModal
             showAttackModifierModal={showAttackModifierModal}
             setShowAttackModifierModal={setShowAttackModifierModal}
@@ -232,9 +231,9 @@ const EnemyPage:React.FC = () => {
           />
           {attackModifierDeck.length > 0 ?
             (
-              <Button variant="contained" onClick={drawAttackCard} className="fixed left-24 bottom-5 w-1/6 xxl:left-50 xxl:bottom-10 bg-green-500 text-black">DRAW ATTACK</Button>
+              <button onClick={drawAttackCard} className="fixed left-24 bottom-5 w-1/6 xxl:left-50 xxl:bottom-10 bg-green-500 text-black">DRAW ATTACK</button>
             ) : (
-              <Button variant="contained" onClick={shuffleAttackDeck} className="fixed left-24 bottom-5 w-1/6 xxl:left-30 xxl:bottom-10 bg-green-500 text-black">SHUFFLE ATTACK</Button>
+              <button onClick={shuffleAttackDeck} className="fixed left-24 bottom-5 w-1/6 xxl:left-30 xxl:bottom-10 bg-green-500 text-black">SHUFFLE ATTACK</button>
             )
           }
           <AttackDrawModal drawnCard={drawnCard} showAttackDrawModal={showAttackDrawModal} setShowAttackDrawModal={setShowAttackDrawModal} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, FormGroup, FormControlLabel, FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material'
+import { Checkbox, FormGroup, FormControlLabel, FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material'
 import { Combobox } from '@headlessui/react'
 import EnemyTile from "./EnemyTile";
 import dice from 'public/img/icons8-dice-80.png';
@@ -48,7 +48,7 @@ const EnemySelectModal:React.FC<EnemySelectModalProps> = ({ showEnemyModal, setS
 
   return (
     <>
-      <Button variant="contained" onClick={() => setShowEnemyModal(true)} className="fixed right-5 w-1/6 bottom-5 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">ADD ENEMY</Button>
+      <button onClick={() => setShowEnemyModal(true)} className="fixed right-5 w-1/6 bottom-5 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">ADD ENEMY</button>
       {showEnemyModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none p-5">

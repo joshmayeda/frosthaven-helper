@@ -1,8 +1,5 @@
 import React from "react";
-import { Button, Checkbox, FormGroup, FormControlLabel, FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material'
 import Image from 'next/image';
-import { Combobox } from '@headlessui/react'
-import EnemyTile from "./EnemyTile";
 
 type AttackDrawModalProps = {
     showAttackDrawModal: boolean;

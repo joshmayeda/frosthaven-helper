@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import EnemyStatModal from './EnemyStatModal';
-import { Button } from '@mui/material'
 
 interface Decks {
     [name: string]: string[];
@@ -618,21 +617,21 @@ const EnemyTile:React.FC<EnemyTileProps> = ({ name, level, boss }) => {
                 <div className="flex gap-10 h-16 items-center justify-center mt-4">
                     <div className="flex relative ring ring-white h-full w-28 items-center justify-center rounded-lg">
                         {abilityDeck.length > 0 ? (
-                            <Button disableRipple onClick={() => drawAbilityCard()} className="w-full h-full">
+                            <button onClick={() => drawAbilityCard()} className="w-full h-full">
                                 <Image src={abilityDeckBack} alt="Ability Deck Back" fill={true} className="relative rounded-lg"/>
-                            </Button>
+                            </button>
                         ) : (
-                            <Button disableRipple onClick={() => reshuffleDeck()} className="w-full h-full text-white">
+                            <button onClick={() => reshuffleDeck()} className="w-full h-full text-white">
                                 Shuffle?
-                            </Button>
+                            </button>
                         )}
                     </div>
 
                     <div className="flex relative ring ring-white h-full w-28 items-center justify-center rounded-lg">
                         {abilityDiscardPile.length > 0 ? (
-                            <Button disableRipple onClick={() => setShowAbilityCard(true)} className="w-full h-full">
+                            <button onClick={() => setShowAbilityCard(true)} className="w-full h-full">
                                 <Image src={abilityDiscardPile[abilityDiscardPile.length - 1]} alt={abilityDiscardPile[abilityDiscardPile.length - 1]} fill={true} className="relative rounded-lg"/>
-                            </Button>
+                            </button>
                         ) : (
                             <div className="text-white">Discard Pile</div>
                         )}
@@ -642,9 +641,9 @@ const EnemyTile:React.FC<EnemyTileProps> = ({ name, level, boss }) => {
                 {showAbilityCard ? (
                     <>
                         <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none p-5">
-                            <Button disableRipple onClick={() => setShowAbilityCard(false)}>
+                            <button onClick={() => setShowAbilityCard(false)}>
                                 <Image src={abilityDiscardPile[abilityDiscardPile.length - 1]} alt={abilityDiscardPile[abilityDiscardPile.length - 1]} width={300} height={300} className="relative"/>
-                            </Button>
+                            </button>
                         </div>
                         <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
                     </>
@@ -654,74 +653,74 @@ const EnemyTile:React.FC<EnemyTileProps> = ({ name, level, boss }) => {
 
                 {boss ? (
                     <>
-                        <Button disableRipple onClick={() => handleButtonClick(hp1, setHp1, shield1, setShield1, retaliate1, setRetaliate1)} className="absolute flex flex-col left-4 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp1, setHp1, shield1, setShield1, retaliate1, setRetaliate1)} className="absolute flex flex-col left-4 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp1}</h1>
                             <h1>Shield: {shield1}</h1>
                             <h1>Retal.: {retaliate1}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-24 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-24 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp2}</h1>
                             <h1>Shield: {shield2}</h1>
                             <h1>Retal.: {retaliate2}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-48 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-48 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp3}</h1>
                             <h1>Shield: {shield3}</h1>
                             <h1>Retal.: {retaliate3}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-68 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-68 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp4}</h1>
                             <h1>Shield: {shield4}</h1>
                             <h1>Retal.: {retaliate4}</h1>
-                        </Button>
+                        </button>
 
                         <EnemyStatModal showStatModal={showStatModal} setShowStatModal={setShowStatModal} conditions={conditions} setConditions={setConditions} props={modalProps} />
                     </>
                 ) : (
                     <>
-                        <Button disableRipple onClick={() => handleButtonClick(hp1, setHp1, shield1, setShield1, retaliate1, setRetaliate1)} className="absolute flex flex-col left-4 top-48 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp1, setHp1, shield1, setShield1, retaliate1, setRetaliate1)} className="absolute flex flex-col left-4 top-48 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp1}</h1>
                             <h1>Shield: {shield1}</h1>
                             <h1>Retaliate: {retaliate1}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-2 top-68 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-2 top-68 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp2}</h1>
                             <h1>Shield: {shield2}</h1>
                             <h1>Retaliate: {retaliate2}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-16 top-92 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-16 top-92 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp3}</h1>
                             <h1>Shield: {shield3}</h1>
                             <h1>Retaliate: {retaliate3}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-48 top-92 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-48 top-92 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp4}</h1>
                             <h1>Shield: {shield4}</h1>
                             <h1>Retaliate: {retaliate4}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp5, setHp5, shield5, setShield5, retaliate5, setRetaliate5)} className="absolute flex flex-col left-64 top-68 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp5, setHp5, shield5, setShield5, retaliate5, setRetaliate5)} className="absolute flex flex-col left-64 top-68 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp5}</h1>
                             <h1>Shield: {shield5}</h1>
                             <h1>Retaliate: {retaliate5}</h1>
-                        </Button>
+                        </button>
 
-                        <Button disableRipple onClick={() => handleButtonClick(hp6, setHp6, shield6, setShield6, retaliate6, setRetaliate6)} className="absolute flex flex-col left-64 top-48 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp6, setHp6, shield6, setShield6, retaliate6, setRetaliate6)} className="absolute flex flex-col left-64 top-48 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp6}</h1>
                             <h1>Shield: {shield6}</h1>
                             <h1>Retaliate: {retaliate6}</h1>
-                        </Button>
+                        </button>
 
                         <EnemyStatModal showStatModal={showStatModal} setShowStatModal={setShowStatModal} conditions={conditions} setConditions={setConditions} props={modalProps} />
                     </>
                 )}
-                <Button variant="contained" className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">Ability</Button>        
+                <button className="fixed left-24 bottom-5 w-1/6 xxl:right-10 xxl:bottom-10 bg-green-500 text-black">Ability</button>        
             </div>
         </>
     )
