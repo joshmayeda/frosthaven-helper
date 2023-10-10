@@ -659,19 +659,19 @@ const EnemyTile:React.FC<EnemyTileProps> = ({ name, level, boss }) => {
                             <h1>Retal.: {retaliate1}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-24 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-28 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp2}</h1>
                             <h1>Shield: {shield2}</h1>
                             <h1>Retal.: {retaliate2}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-48 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-52 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp3}</h1>
                             <h1>Shield: {shield3}</h1>
                             <h1>Retal.: {retaliate3}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-68 top-88 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-72 top-88 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp4}</h1>
                             <h1>Shield: {shield4}</h1>
                             <h1>Retal.: {retaliate4}</h1>
@@ -687,31 +687,31 @@ const EnemyTile:React.FC<EnemyTileProps> = ({ name, level, boss }) => {
                             <h1>Retaliate: {retaliate1}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-2 top-68 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp2, setHp2, shield2, setShield2, retaliate2, setRetaliate2)} className="absolute flex flex-col left-4 top-72 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp2}</h1>
                             <h1>Shield: {shield2}</h1>
                             <h1>Retaliate: {retaliate2}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-16 top-92 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp3, setHp3, shield3, setShield3, retaliate3, setRetaliate3)} className="absolute flex flex-col left-24 top-92 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp3}</h1>
                             <h1>Shield: {shield3}</h1>
                             <h1>Retaliate: {retaliate3}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-48 top-92 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp4, setHp4, shield4, setShield4, retaliate4, setRetaliate4)} className="absolute flex flex-col left-52 top-92 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp4}</h1>
                             <h1>Shield: {shield4}</h1>
                             <h1>Retaliate: {retaliate4}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp5, setHp5, shield5, setShield5, retaliate5, setRetaliate5)} className="absolute flex flex-col left-64 top-68 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp5, setHp5, shield5, setShield5, retaliate5, setRetaliate5)} className="absolute flex flex-col left-72 top-72 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp5}</h1>
                             <h1>Shield: {shield5}</h1>
                             <h1>Retaliate: {retaliate5}</h1>
                         </button>
 
-                        <button onClick={() => handleButtonClick(hp6, setHp6, shield6, setShield6, retaliate6, setRetaliate6)} className="absolute flex flex-col left-64 top-48 h-4/12 z-10 text-white text-sm">
+                        <button onClick={() => handleButtonClick(hp6, setHp6, shield6, setShield6, retaliate6, setRetaliate6)} className="absolute flex flex-col left-72 top-48 h-4/12 z-10 text-white text-sm">
                             <h1>HP: {hp6}</h1>
                             <h1>Shield: {shield6}</h1>
                             <h1>Retaliate: {retaliate6}</h1>
